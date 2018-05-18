@@ -7,10 +7,9 @@ body,
 html {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 body {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
 }
 .container {
   width: 960px;
@@ -20,8 +19,9 @@ body {
 }
 #header {
   .container {
-    background-color: inherit;
+    background-color: #fff;
     padding-top: 100px;
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -58,6 +58,7 @@ body {
             transition: all 300ms;
             text-transform: capitalize;
             &:hover {
+              background-color: #fff;
               background-image: url("../images/line.png");
               background-position: center 20px;
               background-repeat: no-repeat;
@@ -74,8 +75,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 150px;
+  height: 200px;
   .container {
+    padding: 10px 0;
     h1 {
       font-size: 50px;
       text-transform: capitalize;
@@ -84,6 +86,7 @@ body {
       color: white;
     }
     div.slider_content {
+      margin: 10px 0;
       p {
         font-size: 50px;
         text-transform: capitalize;
@@ -103,16 +106,29 @@ aside#links {
       h2 {
         font-size: 30px;
         font-weight: 700;
-        line-height: 20px;
-        margin-bottom: 10px;
+        height: 100px;
+        line-height: 30px;
         text-transform: capitalize;
         color: $text_color;
+        position: relative;
+        &::after {
+          @include pseudo();
+          width: 50px;
+          background-color: #000;
+          height: 2px;
+          font-family: Lato;
+          line-height: 2px;
+          font-weight: normal;
+          bottom: 30px;
+          left: 0;
+          font-size: 20px;
+        }
       }
       p {
         text-transform: capitalize;
         color: $text_color;
         font-weight: 300;
-        line-height: 20px;
+        line-height: 30px;
         font-size: 18px;
         text-align: left;
         text-justify: auto;
@@ -121,6 +137,7 @@ aside#links {
   }
 }
 aside#links {
+  margin-top: 100px;
   .container {
     div {
       padding: 30px;
@@ -141,7 +158,7 @@ aside#links {
           color: $text_color;
           text-align: center;
           line-height: 80px;
-          font-size: 23px;
+          font-size: 20px;
           font-weight: 500;
           text-transform: capitalize;
           transition: all 300ms;
@@ -154,7 +171,7 @@ aside#links {
         &:hover {
           p {
             background-image: url("../images/line.png");
-            background-position: center 60px;
+            background-position: center 73px;
             background-size: contain;
             background-repeat: no-repeat;
             color: #000;
@@ -162,5 +179,221 @@ aside#links {
         }
       }
     }
+  }
+}
+section#subscribe {
+  height: 150px;
+  background-image: url("..//images/slider_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .container {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 20px;
+    p {
+      display: block;
+      width: 100%;
+      justify-content: center;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      width: 50%;
+      justify-content: space-between;
+      input {
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+        width: 78%;
+        line-height: 40px;
+        padding: 3px 7px 3px 7px;
+        font-size: 18px;
+        transition: all 300ms;
+        font-family: Lato;
+        &::placeholder {
+          text-transform: capitalize;
+        }
+        &:-webkit-autofill {
+          box-shadow: 0 0 0 30px #fff inset;
+        }
+      }
+      button {
+        &.loading {
+          &:after {
+            content: "\e839";
+            font-size: 30px;
+            animation: spin 1s linear infinite;
+          }
+        }
+        position: relative;
+        width: 20%;
+        text-transform: capitalize;
+        color: #fff;
+        font-size: 18px;
+        padding: 5px 10px 5px 10px;
+        transition: all 300ms;
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        font-family: Lato;
+        background-color: #00bfff;
+        &:hover {
+          opacity: 0.85;
+        }
+        &:after {
+          @include pseudo($content: "\f1d8");
+          top: 50%;
+          left: 50%;
+          font-size: 18px;
+          width: 50px;
+          height: 50px;
+          margin-left: -25px;
+          margin-top: -25px;
+          text-align: center;
+          line-height: 50px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+footer {
+  height: 150px;
+  .container {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    ul {
+      width: 60%;
+      margin: 0 auto;
+      @include columns(7, 3px);
+      li {
+        a {
+          position: relative;
+          display: block;
+          color: #000;
+          text-align: center;
+          line-height: 100%;
+          border-radius: 10px;
+          padding: 10px;
+          width: 100%;
+          height: 100%;
+          transition: all 300ms;
+          &::after {
+            @include pseudo($content: "\f09a");
+            top: 50%;
+            transition: all 600ms;
+            left: 50%;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-top: -20px;
+            margin-left: -20px;
+          }
+        }
+        &:hover {
+          a::after {
+            background-color: #3b5998;
+            color: white;
+          }
+        }
+        &:nth-child(2) {
+          a::after {
+            content: "\f113";
+          }
+          &:hover {
+            a::after {
+              background-color: #000;
+            }
+          }
+        }
+        &:nth-child(3) {
+          a::after {
+            content: "\f309";
+          }
+          &:hover {
+            a::after {
+              background-color: #00aced;
+              color: white;
+            }
+          }
+        }
+        &:nth-child(4) {
+          a::after {
+            content: "\f16d";
+          }
+          &:hover {
+            a::after {
+              background-color: #000;
+              color: white;
+            }
+          }
+        }
+        &:nth-child(5) {
+          a::after {
+            content: "\f23a";
+          }
+          &:hover {
+            a::after {
+              background-color: #02b875;
+              color: white;
+            }
+          }
+        }
+        &:nth-child(6) {
+          a::after {
+            content: "\f231";
+          }
+          &:hover {
+            a::after {
+              background-color: #bd081c;
+              color: white;
+            }
+          }
+        }
+        &:nth-child(7) {
+          a::after {
+            content: "\f0e1";
+          }
+          &:hover {
+            a::after {
+              background-color: #0077b5;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    p {
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+      color: #000;
+      margin: 0 auto;
+      width: 100%;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.8);
+      text-transform: capitalize;
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

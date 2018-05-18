@@ -1,0 +1,22 @@
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+ 
+  /* fix buttons height */
+  line-height: 1em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+}
+ 
+.icon-spin6 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe839;&nbsp;'); }
+.icon-facebook { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf09a;&nbsp;'); }
+.icon-linkedin { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0e1;&nbsp;'); }
+.icon-github { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf113;&nbsp;'); }
+.icon-instagram { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf16d;&nbsp;'); }
+.icon-paper-plane { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf1d8;&nbsp;'); }
+.icon-pinterest { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf231;&nbsp;'); }
+.icon-medium { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf23a;&nbsp;'); }
+.icon-envelope-open-o { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf2b7;&nbsp;'); }
+.icon-twitter { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf309;&nbsp;'); }
